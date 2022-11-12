@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style></style>
+  </head>
+  <body class="w-full bg-slate-900 flex flex-col items-center text-white">
+    <nav class="w-9/12 text-xl mt-5 flex gap-x-5">
+      <a class="links" href="/" data="home-data">Home</a>
+      <a class="links" href="#">About</a>
+      <a class="links" href="#">Services</a>
+      <a class="links" href="#">Contact</a>
+      <a class="links" href="#">Terms</a>
+    </nav>
+    <button
+      id="btn"
+      class="text-2xl border px-3 py-1 rounded-md"
+      onclick="alert('hello world')"
+    >
+      Click Me
+    </button>
+    <div class="empty_div">
+      <!-- <div></div> -->
+    </div>
+    <script>
+      // alert("Hey you're hacked!");
+      // let str;
+      // if (prompt("Enter the value") == "okay")
+      //   document.body.style.background = "red";
+      // if (confirm("Go back to history")) {
+      //   window.history.back();
+      // }
+      let bodyArr = Array.from(document.body.children);
+      // bodyArr[0].style.background="red";
+      // document.body.children[0].style.background='green';
+      // console.log(document.querySelector(".empty_div").hasChildNodes()); // true
+      // console.log(document.querySelector(".empty_div").childNodes);
+      // console.log(document.querySelectorAll('.links').length);
+      // console.log(document.getElementsByTagName("a"));
+
+      // console.log(document.body.hasChildNodes())
+
+      // Attributes
+      var curr = document.querySelector("nav a");
+      // console.log(curr);
+      // setTimeout(() => {
+      //   curr.removeAttribute("href");
+      //   console.log(curr);
+      // }, 1000);
+      // console.log(curr.attributes);
+
+      // append prepend before after
+      var curr = document.querySelector("nav a");
+      // console.log(curr);
+      // const newDiv = document.createElement("div");
+      // newDiv.innerText = "Text Contents inside a newly crated Div from JS";
+      // newDiv.style.fontSize = "12px";
+      // const text=prompt('Enter the text for DOM');
+      // newDiv.innerText=text;
+      // curr.append(newDiv);
+      // curr.before(newDiv);
+      // curr.after(newDiv);
+      // curr.append(newDiv);
+      // curr.prepend(newDiv);
+      // curr.replaceWith(newDiv);
+      // curr.remove();
+
+      let btn = document.getElementById("btn");
+      function callme(event) {
+        alert("Alert call me");
+        // console.log(event);
+        console.log(event.type);
+        console.log(event.currentTarget);
+        // console.log(event.clientX);
+        // console.log(event.clientY);
+        console.log("first");
+      }
+      btn.addEventListener("click", callme);
+      btn.addEventListener("click", function () {
+        alert("Another alert for same event");
+      });
+
+      // btn.removeEventListener("click", callme);
+    </script>
+  </body>
+</html>
